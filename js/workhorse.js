@@ -22,19 +22,24 @@ $(document).ready(function() {
  
   let completeURL = baseURL + Filenames + PartnerName + TaskName + TaskCompleteStart +TaskCompleteEnd;
   console.log(completeURL)
+  
   fetch(completeURL)
-
-    .then(Response => Response.json())
-    .then(data => {
+  .then(response => response.json())
+  .then(data => {
+    let WHsla = JSON.stringify(data);
+    document.getElementById("display").innerHTML = WHsla; 
+  })
+  .catch((err) => {
+    console.log(err);
+})
+ 
+      // let Whdata = data['url'];
+      // console.log(Whdata);
       
 
-      let Whdata = data['url'];
-      console.log(Whdata);
-      $( "#display" ).attr(Whdata);   
 
 
-
-    })
+    // })
   }
 
 
