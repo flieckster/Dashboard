@@ -26,8 +26,10 @@ $(document).ready(function() {
   fetch(completeURL)
   .then(response => response.json())
   .then(data => {
-    let WHsla = JSON.stringify(data);
-    document.getElementById("display").innerHTML = WHsla; 
+    let WHfilename= data['DATA'][0]['Filenamebarcode']
+    document.getElementById("title").innerHTML = WHfilename; 
+    let WHtask= data['DATA'][0]['CurrentTask']
+    document.getElementById("display").innerHTML = WHtask; 
   })
   .catch((err) => {
     console.log(err);
