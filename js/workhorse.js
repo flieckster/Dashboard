@@ -26,10 +26,31 @@ $(document).ready(function() {
   fetch(completeURL)
   .then(response => response.json())
   .then(data => {
-    let WHfilename= data['DATA'][0]['Filenamebarcode']
-    document.getElementById("title").innerHTML = WHfilename; 
-    let WHtask= data['DATA'][0]['CurrentTask']
-    document.getElementById("display").innerHTML = WHtask; 
+    console.log(data);
+    for ( var i=0 ; i < data.DATA.length; i++){
+      let WHfilename = data['DATA'][i]['Filenamebarcode'];
+      
+      let WHCopyFilename= data['DATA'][i]['CopyFilename'];
+      let WHfilenametrimmed = WHCopyFilename.slice(0, -4);
+      let WHtask= data['DATA'][i]['CurrentTask']
+      let WHProductName= data['DATA'][i]['ProductName']
+      let WHShotStatus= data['DATA'][i]['ShotStatus']
+    // console.log(WHfilename);
+    // console.log(WHtask);
+
+    document.getElementById("display").insertAdjacentHTML('afterbegin', `<div class="row">
+    <div class="col  m6">
+        <div class="card blue-grey lighten-2">
+            <div class="card-content white-text">
+                <span class="card-title">${WHfilename}</span>
+                <p>Filename: ${WHfilenametrimmed}</p>
+                <p>Product Name: ${WHProductName}</p>
+                <p>Shot Status: ${WHShotStatus}</p>
+                <p>Current Task: ${WHtask}</p>
+            </div>
+        </div>
+    </div>`);
+  }
   })
   .catch((err) => {
     console.log(err);
