@@ -1,0 +1,25 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "dashboard concept",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flieckster/Dashboard.git"
+  },
+  "author": "Brian Flieck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flieckster/Dashboard/issues"
+  },
+  "homepage": "https://github.com/flieckster/Dashboard#readme",
+  "dependencies": {
+    "chartjs": "^0.3.24",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}

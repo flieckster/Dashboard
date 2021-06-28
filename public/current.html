@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <nav class="blue-grey lighten-2">
+        <div class="valign-wrapper">
+          <a href="/index.html"><img src="./Images/IC_Logo_June2019_BLACK.png" alt="ics logo" class="brand-logo center m6" width="200px" style="margin-top: -20px"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="current.html">Current Workload</a></li>
+            <!-- <li><a href="badges.html">N/A</a></li>
+            <li><a href="collapsible.html">N/A</a></li> -->
+          </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+    
+        <!-- button -->
+        <div class="row">
+            <a class="waves-effect waves-light btn" id="getDatabutton">Current Workload</a>
+        </div>
+        <div class="container">
+            <canvas id="myChart" width="400" height="400"></canvas>
+
+            </div>
+        </div>
+    </main>
+    <script>
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/workload.js"></script>
+</body>
+
+</html>

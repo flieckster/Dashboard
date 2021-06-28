@@ -13,48 +13,46 @@
 <body>
     <nav class="blue-grey lighten-2">
         <div class="valign-wrapper">
-            <img src="./Images/IC_Logo_June2019_BLACK.png" alt="ics logo" class="brand-logo center m6" width="150px"
-                style="margin-top: 30px">
-            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">1</a></li>
-            <li><a href="badges.html">2</a></li>
-            <li><a href="collapsible.html">3</a></li>
-          </ul> -->
+            <a href="/index.html"><img src="/Images/IC_Logo_June2019_BLACK.png" alt="ics logo" class="brand-logo center m6" width="200px" style="margin-top: -20px"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="current.html">Current Workload</a></li>
+            <!-- <li><a href="badges.html">N/A</a></li>
+            <li><a href="collapsible.html">N/A</a></li> -->
+          </ul>
         </div>
     </nav>
 
     <main class="container">
         <div class="row">
-            <div class="input-field muted col s3">
+            <div class="input-field muted col s12">
                 <input placeholder="ex. NYCC-01257890_913" id="Filenames" type="text" class="validate">
                 <label class="active" for="Filenames">Filename</label>
-
             </div>
         </div>
-            <div class="row">
-                <div class="input-field col s3">
-                    <input placeholder="mm/dd/yy" id=TaskStartDate type="date">
-                    <label class="active" for="TaskStartDate">Start Date</label>
-                </div>
+        <div class="row">
+            <div class="input-field muted  col s3">
+                <input placeholder="start date" id=TaskStartDate type="date">
+                <label class="active" for="TaskStartDate">Start Date</label>
             </div>
-                <div class="row">
-                <div class="input-field col s3">
-                    <input placeholder="mm/dd/yy" id=TaskEndDate type="date">
-                    <label class="active" for="TaskEndDate">End Date</label>
-                </div>
-            </div>
-            <!-- button -->
-            <div class="row">
-                <a class="waves-effect waves-light btn" id="getDatabutton">get data</a>
-            </div>
-        <div class="container" id="display">
     
+       
+            <div class="input-field  muted  col s3">
+                <input placeholder="end date" id=TaskEndDate type="date">
+                <label class="active" for="TaskEndDate">End Date</label>
+            </div>
+        </div>
+        <!-- button -->
+        <div class="row">
+            <a class="waves-effect waves-light btn" id="getDatabutton">get data</a>
+        </div>
+        <div class="container">
+            <div class="row" id="display">
 
-
+            </div>
         </div>
         <div>
             <canvas id="myChart"></canvas>
-          </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

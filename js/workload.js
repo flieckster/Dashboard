@@ -45,6 +45,7 @@ $(document).ready(function() {
       let WHShotStatus= data['DATA'][i]['ShotStatus']
       let WHthumb= data['DATA'][i]['ThumbPath']
     // console.log(WHfilename);
+    // console.log(WHtask);
 
 
     document.getElementById("display").insertAdjacentHTML('afterbegin', `
